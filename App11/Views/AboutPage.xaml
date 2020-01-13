@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App11.Views.AboutPage"
+             xmlns:vm="clr-namespace:App11.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#6A2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <ContentView >
+                <Image Source="wait.jpg" Aspect="AspectFit"/>
+            </ContentView>
+        </StackLayout>
+        <ScrollView Grid.Row="0">
+            <StackLayout Orientation="Vertical" Padding="30,250,30,50" Spacing="10" >
+                <Label FontSize="20" TextColor="Black" HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Будет доступно в более поздней версии" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Margin="90,10,90,0" Text="Назад"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
